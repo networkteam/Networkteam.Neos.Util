@@ -6,15 +6,15 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
  ***************************************************************/
 
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\I18n\Service;
+use TYPO3\Flow\Utility\Arrays;
 
 class StrftimeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @Flow\Inject
-	 * @var Service
+	 * @Flow\Inject(setting="locales")
+	 * @var string
 	 */
-	protected $i18n;
+	protected $locales;
 
 	/**
 	 * Render the supplied DateTime object as a formatted date using strftime.
@@ -31,15 +31,15 @@ class StrftimeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
 			}
 		}
 
-		$flowLocale = $this->i18n->getConfiguration()->getCurrentLocale();
 		$systemLocale = setlocale(LC_TIME, 0);
-		setlocale(LC_TIME, (string)$flowLocale);
+		setlocale(LC_TIME, Arrays::trimExplode(',', $this->locales));
 
 		if ($date instanceof \DateTime) {
 			$result = strftime($format, $date->getTimestamp());
 		} else {
 			$result = strftime($format, (int)$date);
 		}
+
 		setlocale(LC_TIME, $systemLocale);
 		return $result;
 	}
