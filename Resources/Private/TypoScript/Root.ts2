@@ -1,0 +1,8 @@
+prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
+	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ImageUriAndDimensionsImplementation'
+	maximumWidth = 2560
+	maximumHeight = 2560
+	allowCropping = FALSE
+	allowUpScaling = FALSE
+	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
+}
