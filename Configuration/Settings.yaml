@@ -3,6 +3,11 @@ TYPO3:
     defaultContext:
       Networkteam.Neos.Util.Format.SanitizedId: 'Networkteam\Neos\Util\String\StringToIdSanitizer'
 
+  Neos:
+    typoScript:
+      autoInclude:
+        'Networkteam.Neos.Util': TRUE
+
 Networkteam:
   Neos:
     Util:
