@@ -6,3 +6,13 @@ prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	allowUpScaling = FALSE
 	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
+
+prototype(Networkteam.Neos.Util:Json) {
+	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonImplementation'
+}
+
+prototype(Networkteam.Neos.Util:Json.Object) < prototype(TYPO3.TypoScript:RawArray)
+
+prototype(Networkteam.Neos.Util:Json.Collection) < prototype(TYPO3.TypoScript:Collection) {
+	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonCollectionImplementation'
+}
