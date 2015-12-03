@@ -72,14 +72,17 @@ class ImageUriAndDimensionsImplementation extends \TYPO3\TypoScript\TypoScriptOb
 	public function evaluate() {
 		$asset = $this->getAsset();
 
+		if (!$asset instanceof AssetInterface) {
+			throw new \Exception('No asset given for rendering.', 1435754424);
+		}
+
 		$maximumWidth = $this->getMaximumWidth();
 		$maximumHeight = $this->getMaximumHeight();
 		$allowCropping = $this->getAllowCropping();
 		$allowUpScaling = $this->getAllowUpScaling();
 
-		if (!$asset instanceof AssetInterface) {
-			throw new \Exception('No asset given for rendering.', 1435754424);
-		}
-		return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $maximumWidth, $maximumHeight, $allowCropping, $allowUpScaling);
+		$thumbnailConfiguration = new \TYPO3\Media\Domain\Model\ThumbnailConfiguration(null, $maximumWidth, null, $maximumHeight, $allowCropping, $allowUpScaling);
+
+		return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $thumbnailConfiguration);
 	}
 }
