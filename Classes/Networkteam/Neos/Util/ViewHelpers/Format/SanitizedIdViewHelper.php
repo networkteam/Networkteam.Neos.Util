@@ -6,6 +6,14 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
 
 class SanitizedIdViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
+
+	/**
+	 * NOTE: This property has been introduced via code migration to ensure backwards-compatibility.
+	 * @see AbstractViewHelper::isOutputEscapingEnabled()
+	 * @var boolean
+	 */
+	protected $escapeOutput = FALSE;
+
 	/**
 	 * Be aware that this ViewHelper will not maintain the uniqueness of a generated Id
 	 *
