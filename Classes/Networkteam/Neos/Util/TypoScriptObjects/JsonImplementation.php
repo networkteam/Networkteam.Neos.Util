@@ -7,7 +7,7 @@ namespace Networkteam\Neos\Util\TypoScriptObjects;
 
 use Neos\Flow\Annotations as Flow;
 
-class JsonImplementation extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
+class JsonImplementation extends \Neos\Fusion\TypoScriptObjects\AbstractTypoScriptObject {
 
 	/**
 	 * @return mixed

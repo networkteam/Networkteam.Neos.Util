@@ -1,8 +1,4 @@
 
-TYPO3:
-  TypoScript:
-    defaultContext:
-      Networkteam.Neos.Util.Format.SanitizedId: Networkteam\Neos\Util\String\StringToIdSanitizer
 Networkteam:
   Neos:
     Util:
@@ -12,3 +8,6 @@ Neos:
     typoScript:
       autoInclude:
         Networkteam.Neos.Util: true
+  Fusion:
+    defaultContext:
+      Networkteam.Neos.Util.Format.SanitizedId: Networkteam\Neos\Util\String\StringToIdSanitizer

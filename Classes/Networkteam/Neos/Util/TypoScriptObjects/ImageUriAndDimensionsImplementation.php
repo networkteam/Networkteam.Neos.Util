@@ -9,7 +9,7 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Media\Domain\Model\AssetInterface;
 use Neos\Media\Domain\Service\AssetService;
 
-class ImageUriAndDimensionsImplementation extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
+class ImageUriAndDimensionsImplementation extends \Neos\Fusion\TypoScriptObjects\AbstractTypoScriptObject {
 
 	/**
 	 * Resource publisher
