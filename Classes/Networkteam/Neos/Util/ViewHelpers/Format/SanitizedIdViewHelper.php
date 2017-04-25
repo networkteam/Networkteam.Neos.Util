@@ -4,7 +4,7 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-class SanitizedIdViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SanitizedIdViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 
 
 	/**
