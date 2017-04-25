@@ -63,7 +63,7 @@ class MapPropertyOperation extends AbstractOperation {
 			foreach ($context as $element) {
 				if ($element instanceof NodeInterface) {
 					if ($propertyPath[0] === '_') {
-						$result[] = \Neos\Flow\Reflection\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
+						$result[] = \Neos\Utility\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
 					} else {
 						$result[] = $element->getProperty($propertyPath);
 					}

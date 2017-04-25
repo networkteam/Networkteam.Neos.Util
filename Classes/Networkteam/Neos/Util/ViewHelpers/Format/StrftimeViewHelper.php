@@ -6,7 +6,7 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
  ***************************************************************/
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Utility\Arrays;
+use Neos\Utility\Arrays;
 
 class StrftimeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
