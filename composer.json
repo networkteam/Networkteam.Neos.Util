@@ -1,10 +1,10 @@
 {
     "name": "networkteam/neos-util",
-    "type": "typo3-flow-package",
-    "description": "Add description here",
+    "type": "neos-package",
+    "description": "networkteam utils for neos",
     "require": {
-        "typo3/flow": "*",
-        "typo3/media": "~2.0"
+        "neos/flow": "*",
+        "neos/media": "*"
     },
     "autoload": {
         "psr-0": {
