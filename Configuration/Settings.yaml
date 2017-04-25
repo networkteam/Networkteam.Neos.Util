@@ -5,7 +5,7 @@ Networkteam:
       locales: 'de_DE.utf8,de_DE,de'
 Neos:
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
         Networkteam.Neos.Util: true
   Fusion:
