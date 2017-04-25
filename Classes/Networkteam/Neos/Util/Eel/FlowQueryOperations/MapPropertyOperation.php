@@ -5,8 +5,8 @@ namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
@@ -54,7 +54,7 @@ class MapPropertyOperation extends AbstractOperation {
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments) {
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
+			throw new \Neos\Eel\FlowQuery\FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
 		} else {
 			$context = $flowQuery->getContext();
 			$propertyPath = $arguments[0];
