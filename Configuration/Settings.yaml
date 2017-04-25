@@ -1,15 +1,14 @@
+
 TYPO3:
   TypoScript:
     defaultContext:
-      Networkteam.Neos.Util.Format.SanitizedId: 'Networkteam\Neos\Util\String\StringToIdSanitizer'
-
-  Neos:
-    typoScript:
-      autoInclude:
-        'Networkteam.Neos.Util': TRUE
-
+      Networkteam.Neos.Util.Format.SanitizedId: Networkteam\Neos\Util\String\StringToIdSanitizer
 Networkteam:
   Neos:
     Util:
-      # Locale setting for ViewHelpers (e.g. format.strftime), multiple values will be tried in fallback order
-      locales: de_DE.utf8,de_DE,de
+      locales: 'de_DE.utf8,de_DE,de'
+Neos:
+  Neos:
+    typoScript:
+      autoInclude:
+        Networkteam.Neos.Util: true
