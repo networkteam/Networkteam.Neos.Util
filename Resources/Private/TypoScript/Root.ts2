@@ -11,8 +11,8 @@ prototype(Networkteam.Neos.Util:Json) {
 	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonImplementation'
 }
 
-prototype(Networkteam.Neos.Util:Json.Object) < prototype(TYPO3.TypoScript:RawArray)
+prototype(Networkteam.Neos.Util:Json.Object) < prototype(Neos.Fusion:RawArray)
 
-prototype(Networkteam.Neos.Util:Json.Collection) < prototype(TYPO3.TypoScript:Collection) {
+prototype(Networkteam.Neos.Util:Json.Collection) < prototype(Neos.Fusion:Collection) {
 	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonCollectionImplementation'
 }
