@@ -5,7 +5,7 @@ namespace Networkteam\Neos\Util\TypoScriptObjects;
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Media\Domain\Model\AssetInterface;
 use TYPO3\Media\Domain\Service\AssetService;
 

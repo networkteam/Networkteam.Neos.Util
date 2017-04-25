@@ -5,8 +5,8 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Utility\Arrays;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Utility\Arrays;
 
 class StrftimeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 

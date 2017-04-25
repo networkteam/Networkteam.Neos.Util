@@ -5,7 +5,7 @@ namespace Networkteam\Neos\Util\TypoScriptObjects;
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 class JsonCollectionImplementation extends \TYPO3\TypoScript\TypoScriptObjects\AbstractCollectionImplementation {
 

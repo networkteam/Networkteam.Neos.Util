@@ -7,7 +7,7 @@ namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
 
 use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
 /**
@@ -63,7 +63,7 @@ class MapPropertyOperation extends AbstractOperation {
 			foreach ($context as $element) {
 				if ($element instanceof NodeInterface) {
 					if ($propertyPath[0] === '_') {
-						$result[] = \TYPO3\Flow\Reflection\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
+						$result[] = \Neos\Flow\Reflection\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
 					} else {
 						$result[] = $element->getProperty($propertyPath);
 					}
