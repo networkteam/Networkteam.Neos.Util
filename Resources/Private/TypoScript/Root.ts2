@@ -22,13 +22,13 @@ prototype(Networkteam.Neos.Util:Json.Collection) < prototype(TYPO3.TypoScript:Co
 # Usage:
 # fileUri = Networkteam.Neos.Util:ResourceUri {
 #   path = 'resource://Some.Package/Public/Images/SomeImage.png'
-#   appendCacheBuster = TRUE
+#   cacheBuster = TRUE
 # }
 #
 prototype(Networkteam.Neos.Util:ResourceUri) {
 	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ResourceUriImplementation'
 	localize = TRUE
-	appendCacheBuster = TRUE
+	cacheBuster = TRUE
 
 	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }

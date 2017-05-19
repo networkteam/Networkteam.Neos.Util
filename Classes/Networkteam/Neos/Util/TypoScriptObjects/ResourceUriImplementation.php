@@ -11,10 +11,19 @@ use TYPO3\TypoScript\Exception as TypoScriptException;
 
 class ResourceUriImplementation extends \TYPO3\TypoScript\TypoScriptObjects\ResourceUriImplementation {
 
-    public function appendCacheBuster() {
-        return (boolean)$this->tsValue('appendCacheBuster');
+    /**
+     * @return bool
+     */
+    public function isCacheBuster() {
+        return (boolean)$this->tsValue('cacheBuster');
     }
 
+    /**
+     * Returns the absolute URL of a resource including cacheBuster parameter
+     *
+     * @return string
+     * @throws TypoScriptException
+     */
     public function evaluate()
     {
         $cacheBuster = '';
@@ -60,7 +69,7 @@ class ResourceUriImplementation extends \TYPO3\TypoScript\TypoScriptObjects\Reso
             }
         }
 
-        if ($this->appendCacheBuster() === TRUE) {
+        if ($this->isCacheBuster() === TRUE) {
             $resourcePath = 'resource://' . $package . '/Public/' . $path;
             if (is_file($resourcePath)) {
                 $resourceModificationTimestamp = filemtime($resourcePath);
