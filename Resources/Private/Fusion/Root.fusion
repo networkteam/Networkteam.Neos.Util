@@ -4,7 +4,7 @@ prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	maximumHeight = 2560
 	allowCropping = FALSE
 	allowUpScaling = FALSE
-	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
+	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
 
 prototype(Networkteam.Neos.Util:Json) {
