@@ -5,7 +5,7 @@ namespace Networkteam\Neos\Util\String;
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-class StringToIdSanitizer implements \TYPO3\Eel\ProtectedContextAwareInterface {
+class StringToIdSanitizer implements \Neos\Eel\ProtectedContextAwareInterface {
 
 	/**
 	 * @var string

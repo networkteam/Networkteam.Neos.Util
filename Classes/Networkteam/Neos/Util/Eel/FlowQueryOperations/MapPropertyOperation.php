@@ -5,10 +5,10 @@ namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 /**
  * Retrieve a property of all results in the context and map it to an array
@@ -54,7 +54,7 @@ class MapPropertyOperation extends AbstractOperation {
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments) {
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
+			throw new \Neos\Eel\FlowQuery\FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
 		} else {
 			$context = $flowQuery->getContext();
 			$propertyPath = $arguments[0];
@@ -63,7 +63,7 @@ class MapPropertyOperation extends AbstractOperation {
 			foreach ($context as $element) {
 				if ($element instanceof NodeInterface) {
 					if ($propertyPath[0] === '_') {
-						$result[] = \TYPO3\Flow\Reflection\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
+						$result[] = \Neos\Utility\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
 					} else {
 						$result[] = $element->getProperty($propertyPath);
 					}

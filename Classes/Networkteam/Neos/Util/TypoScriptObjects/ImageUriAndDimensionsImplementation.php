@@ -5,11 +5,11 @@ namespace Networkteam\Neos\Util\TypoScriptObjects;
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Media\Domain\Model\AssetInterface;
-use TYPO3\Media\Domain\Service\AssetService;
+use Neos\Flow\Annotations as Flow;
+use Neos\Media\Domain\Model\AssetInterface;
+use Neos\Media\Domain\Service\AssetService;
 
-class ImageUriAndDimensionsImplementation extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
+class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject {
 
 	/**
 	 * Resource publisher
@@ -81,7 +81,7 @@ class ImageUriAndDimensionsImplementation extends \TYPO3\TypoScript\TypoScriptOb
 		$allowCropping = $this->getAllowCropping();
 		$allowUpScaling = $this->getAllowUpScaling();
 
-		$thumbnailConfiguration = new \TYPO3\Media\Domain\Model\ThumbnailConfiguration(null, $maximumWidth, null, $maximumHeight, $allowCropping, $allowUpScaling);
+		$thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration(null, $maximumWidth, null, $maximumHeight, $allowCropping, $allowUpScaling);
 
 		return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $thumbnailConfiguration);
 	}

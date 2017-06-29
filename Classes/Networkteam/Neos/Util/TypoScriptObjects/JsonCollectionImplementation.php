@@ -5,9 +5,9 @@ namespace Networkteam\Neos\Util\TypoScriptObjects;
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
-class JsonCollectionImplementation extends \TYPO3\TypoScript\TypoScriptObjects\AbstractCollectionImplementation {
+class JsonCollectionImplementation extends \Neos\Fusion\FusionObjects\AbstractCollectionImplementation {
 
 	/**
 	 * @return array
@@ -22,7 +22,7 @@ class JsonCollectionImplementation extends \TYPO3\TypoScript\TypoScriptObjects\A
 		$this->numberOfRenderedNodes = 0;
 		$itemName = $this->getItemName();
 		if ($itemName === NULL) {
-			throw new \TYPO3\TypoScript\Exception('The Collection needs an itemName to be set.', 1344325771);
+			throw new \Neos\Fusion\Exception('The Collection needs an itemName to be set.', 1344325771);
 		}
 		$iterationName = $this->getIterationName();
 		$collectionTotalCount = count($collection);
