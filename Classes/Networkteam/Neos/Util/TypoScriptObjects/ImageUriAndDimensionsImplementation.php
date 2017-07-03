@@ -34,7 +34,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getWidth() {
-		return $this->tsValue('width');
+		return is_int($this->tsValue('width') ? $this->tsValue('width') : null;
 	}
 
 	/**
@@ -43,7 +43,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getHeight() {
-		return $this->tsValue('height');
+		return is_int($this->tsValue('height') ? $this->tsValue('height') : null;
 	}
 
 	/**
@@ -52,7 +52,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getMaximumWidth() {
-		return $this->tsValue('maximumWidth');
+		return is_int($this->tsValue('maximumWidth') ? $this->tsValue('maximumWidth') : null;
 	}
 
 	/**
@@ -61,7 +61,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getMaximumHeight() {
-		return $this->tsValue('maximumHeight');
+		return is_int($this->tsValue('maximumHeight') ? $this->tsValue('maximumHeight') : null;
 	}
 
 	/**

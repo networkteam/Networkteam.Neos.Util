@@ -1,5 +1,7 @@
 prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ImageUriAndDimensionsImplementation'
+	width = null
+	height = null
 	maximumWidth = 2560
 	maximumHeight = 2560
 	allowCropping = FALSE
