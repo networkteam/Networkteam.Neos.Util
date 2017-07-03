@@ -30,5 +30,5 @@ prototype(Networkteam.Neos.Util:ResourceUri) {
 	localize = TRUE
 	cacheBuster = TRUE
 
-	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
+	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
