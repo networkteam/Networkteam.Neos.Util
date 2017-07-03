@@ -1,5 +1,7 @@
 prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ImageUriAndDimensionsImplementation'
+	width = null
+	height = null
 	maximumWidth = 2560
 	maximumHeight = 2560
 	allowCropping = FALSE
@@ -30,5 +32,5 @@ prototype(Networkteam.Neos.Util:ResourceUri) {
 	localize = TRUE
 	cacheBuster = TRUE
 
-	@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\AbsorbingHandler'
+	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }

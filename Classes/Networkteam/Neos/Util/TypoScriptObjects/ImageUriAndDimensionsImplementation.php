@@ -29,12 +29,30 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	}
 
 	/**
+	 * Width
+	 *
+	 * @return integer
+	 */
+	public function getWidth() {
+		return is_int($this->tsValue('width') ? $this->tsValue('width') : null;
+	}
+
+	/**
+	 * Height
+	 *
+	 * @return integer
+	 */
+	public function getHeight() {
+		return is_int($this->tsValue('height') ? $this->tsValue('height') : null;
+	}
+
+	/**
 	 * MaximumWidth
 	 *
 	 * @return integer
 	 */
 	public function getMaximumWidth() {
-		return $this->tsValue('maximumWidth');
+		return is_int($this->tsValue('maximumWidth') ? $this->tsValue('maximumWidth') : null;
 	}
 
 	/**
@@ -43,7 +61,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getMaximumHeight() {
-		return $this->tsValue('maximumHeight');
+		return is_int($this->tsValue('maximumHeight') ? $this->tsValue('maximumHeight') : null;
 	}
 
 	/**
@@ -76,12 +94,14 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 			throw new \Exception('No asset given for rendering.', 1435754424);
 		}
 
+		$width = $this->getWidth();
+		$height = $this->getHeight();
 		$maximumWidth = $this->getMaximumWidth();
 		$maximumHeight = $this->getMaximumHeight();
 		$allowCropping = $this->getAllowCropping();
 		$allowUpScaling = $this->getAllowUpScaling();
 
-		$thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration(null, $maximumWidth, null, $maximumHeight, $allowCropping, $allowUpScaling);
+		$thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration($width, $maximumWidth, $height, $maximumHeight, $allowCropping, $allowUpScaling);
 
 		return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $thumbnailConfiguration);
 	}
