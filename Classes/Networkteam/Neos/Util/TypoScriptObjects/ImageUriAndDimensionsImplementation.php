@@ -34,7 +34,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getWidth() {
-		return $this->tsValue('maximumWidth');
+		return $this->tsValue('width');
 	}
 
 	/**
@@ -43,7 +43,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getHeight() {
-		return $this->tsValue('maximumHeight');
+		return $this->tsValue('height');
 	}
 
 	/**
