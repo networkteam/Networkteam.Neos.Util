@@ -6,7 +6,6 @@ namespace Networkteam\Neos\Util\ViewHelpers\Format;
  ***************************************************************/
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Utility\Arrays;
 
 class StrftimeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 
@@ -16,13 +15,13 @@ class StrftimeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractView
 	 * @see AbstractViewHelper::isOutputEscapingEnabled()
 	 * @var boolean
 	 */
-//	protected $escapeOutput = FALSE;
+	protected $escapeOutput = FALSE;
 
 	/**
-	 * @Flow\Inject(setting="locales")
-	 * @var string
+     * @Flow\InjectConfiguration(path="locales")
+     * @var array
 	 */
-//	protected $locales;
+	protected $locales;
 
 	/**
 	 * Render the supplied DateTime object as a formatted date using strftime.
@@ -31,25 +30,25 @@ class StrftimeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractView
 	 * @param string $format Format String which is taken to format the Date/Time
 	 * @return string Formatted date
 	 */
-//	public function render($date = NULL, $format = '%A, %d. %B %Y') {
-//		if ($date === NULL) {
-//			$date = $this->renderChildren();
-//			if ($date === NULL) {
-//				return '';
-//			}
-//		}
+	public function render($date = NULL, $format = '%A, %d. %B %Y') {
+		if ($date === NULL) {
+			$date = $this->renderChildren();
+			if ($date === NULL) {
+				return '';
+			}
+		}
 
-//		$systemLocale = setlocale(LC_TIME, 0);
-//		setlocale(LC_TIME, Arrays::trimExplode(',', $this->locales));
+		$systemLocale = setlocale(LC_TIME, 0);
+		setlocale(LC_TIME, $this->locales);
 
-//		if ($date instanceof \DateTime) {
-//			$result = strftime($format, $date->getTimestamp());
-//		} else {
-//			$result = strftime($format, (int)$date);
-//		}
+		if ($date instanceof \DateTime) {
+			$result = strftime($format, $date->getTimestamp());
+		} else {
+			$result = strftime($format, (int)$date);
+		}
 
-//		setlocale(LC_TIME, $systemLocale);
-//		return $result;
-//	}
+		setlocale(LC_TIME, $systemLocale);
+		return $result;
+	}
 
 }

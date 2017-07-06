@@ -2,7 +2,8 @@
 Networkteam:
   Neos:
     Util:
-      locales: 'de_DE.utf8,de_DE,de'
+      locales: ['de_DE.utf8', 'de_DE', 'de']
+
 Neos:
   Neos:
     fusion:
