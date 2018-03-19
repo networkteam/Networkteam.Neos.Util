@@ -12,4 +12,5 @@ Neos:
   Fusion:
     defaultContext:
       Networkteam.Neos.Util.Caching: Networkteam\Neos\Util\Eel\CachingHelper
+      Networkteam.Neos.Util.String: Networkteam\Neos\Util\Eel\StringHelper
       Networkteam.Neos.Util.Format.SanitizedId: Networkteam\Neos\Util\String\StringToIdSanitizer

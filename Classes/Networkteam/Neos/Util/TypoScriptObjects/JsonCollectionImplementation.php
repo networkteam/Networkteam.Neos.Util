@@ -27,15 +27,15 @@ class JsonCollectionImplementation extends \Neos\Fusion\FusionObjects\AbstractCo
 		$iterationName = $this->getIterationName();
 		$collectionTotalCount = count($collection);
 		foreach ($collection as $collectionElement) {
-			$context = $this->tsRuntime->getCurrentContext();
+			$context = $this->runtime->getCurrentContext();
 			$context[$itemName] = $collectionElement;
 			if ($iterationName !== NULL) {
 				$context[$iterationName] = $this->prepareIterationInformation($collectionTotalCount);
 			}
 
-			$this->tsRuntime->pushContextArray($context);
-			$output[] = $this->tsRuntime->render($this->path . '/itemRenderer');
-			$this->tsRuntime->popContext();
+			$this->runtime->pushContextArray($context);
+			$output[] = $this->runtime->render($this->path . '/itemRenderer');
+			$this->runtime->popContext();
 			$this->numberOfRenderedNodes++;
 		}
 
