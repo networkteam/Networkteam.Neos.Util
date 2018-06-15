@@ -7,7 +7,7 @@
         "neos/media": "*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Networkteam\\Neos\\Util": "Classes"
         }
     },

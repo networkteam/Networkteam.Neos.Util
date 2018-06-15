@@ -1,5 +1,5 @@
 <?php
-namespace Networkteam\Neos\Util\TypoScriptObjects;
+namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2015 networkteam GmbH - all rights reserved

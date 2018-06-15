@@ -1,5 +1,5 @@
 <?php
-namespace Networkteam\Neos\Util\TypoScriptObjects;
+namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2015 networkteam GmbH - all rights reserved
@@ -13,7 +13,7 @@ class JsonImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject
 	 * @return mixed
 	 */
 	public function getValue() {
-		return $this->tsValue('value');
+		return $this->fusionValue('value');
 	}
 
 	/**
