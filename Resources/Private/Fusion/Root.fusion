@@ -1,5 +1,5 @@
 prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
-	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ImageUriAndDimensionsImplementation'
+	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\ImageUriAndDimensionsImplementation'
 	width = null
 	height = null
 	maximumWidth = 2560
@@ -10,13 +10,13 @@ prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 }
 
 prototype(Networkteam.Neos.Util:Json) {
-	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonImplementation'
+	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\JsonImplementation'
 }
 
 prototype(Networkteam.Neos.Util:Json.Object) < prototype(Neos.Fusion:RawArray)
 
 prototype(Networkteam.Neos.Util:Json.Collection) < prototype(Neos.Fusion:Collection) {
-	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\JsonCollectionImplementation'
+	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\JsonCollectionImplementation'
 }
 
 # Renders an URI pointing to a resource including chacheBuster parameter if wanted
@@ -28,7 +28,7 @@ prototype(Networkteam.Neos.Util:Json.Collection) < prototype(Neos.Fusion:Collect
 # }
 #
 prototype(Networkteam.Neos.Util:ResourceUri) {
-	@class = 'Networkteam\\Neos\\Util\\TypoScriptObjects\\ResourceUriImplementation'
+	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\ResourceUriImplementation'
 	localize = TRUE
 	cacheBuster = TRUE
 

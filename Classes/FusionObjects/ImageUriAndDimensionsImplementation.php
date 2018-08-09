@@ -1,5 +1,5 @@
 <?php
-namespace Networkteam\Neos\Util\TypoScriptObjects;
+namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2014 networkteam GmbH - all rights reserved
@@ -25,7 +25,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return AssetInterface
 	 */
 	public function getAsset() {
-		return $this->tsValue('asset');
+		return $this->fusionValue('asset');
 	}
 
 	/**
@@ -34,7 +34,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getWidth() {
-		return $this->tsValue('maximumWidth');
+		return $this->fusionValue('maximumWidth');
 	}
 
 	/**
@@ -43,7 +43,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getHeight() {
-		return $this->tsValue('maximumHeight');
+		return $this->fusionValue('maximumHeight');
 	}
 
 	/**
@@ -52,7 +52,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getMaximumWidth() {
-		return $this->tsValue('maximumWidth');
+		return $this->fusionValue('maximumWidth');
 	}
 
 	/**
@@ -61,7 +61,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return integer
 	 */
 	public function getMaximumHeight() {
-		return $this->tsValue('maximumHeight');
+		return $this->fusionValue('maximumHeight');
 	}
 
 	/**
@@ -70,7 +70,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return boolean
 	 */
 	public function getAllowCropping() {
-		return $this->tsValue('allowCropping');
+		return $this->fusionValue('allowCropping');
 	}
 
 	/**
@@ -79,7 +79,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
 	 * @return boolean
 	 */
 	public function getAllowUpScaling() {
-		return $this->tsValue('allowUpScaling');
+		return $this->fusionValue('allowUpScaling');
 	}
 
 	/**
