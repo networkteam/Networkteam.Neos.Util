@@ -2,6 +2,7 @@ TYPO3:
   TypoScript:
     defaultContext:
       Networkteam.Neos.Util.Format.SanitizedId: 'Networkteam\Neos\Util\String\StringToIdSanitizer'
+      Networkteam.Neos.Util.String: 'Networkteam\Neos\Util\Eel\StringHelper'
 
   Neos:
     typoScript:
