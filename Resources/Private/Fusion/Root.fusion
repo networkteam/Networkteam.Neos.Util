@@ -34,3 +34,8 @@ prototype(Networkteam.Neos.Util:ResourceUri) {
 
 	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
+
+prototype(Networkteam.Neos.Util:NodeUri) < prototype(Neos.Neos:NodeUri) {
+    @class = 'Networkteam\\Neos\\Util\\FusionObjects\\NodeUriImplementation'
+    disableAuthorizationChecks = false
+}
