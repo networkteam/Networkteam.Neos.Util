@@ -41,6 +41,16 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
         return $result;
     }
 
+    public function validate($string): bool
+    {
+        try {
+            $this->hashService->validateAndStripHmac($string);
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
