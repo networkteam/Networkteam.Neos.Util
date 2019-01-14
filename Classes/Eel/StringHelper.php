@@ -3,6 +3,7 @@ namespace Networkteam\Neos\Util\Eel;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Eel\ProtectedContextAwareInterface;
+use Neos\Flow\Validation\Validator\UuidValidator;
 use Neos\Neos\Exception;
 
 /**
