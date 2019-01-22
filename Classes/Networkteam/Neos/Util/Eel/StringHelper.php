@@ -15,7 +15,7 @@ class StringHelper implements ProtectedContextAwareInterface
      * @param string $nodeIdentifier
      * @return bool
      */
-    public function isUuid(?string $nodeIdentifier)
+    public function isUuid($nodeIdentifier)
     {
         return preg_match(UuidValidator::PATTERN_MATCH_UUID, $nodeIdentifier) === 1;
     }
