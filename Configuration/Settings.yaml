@@ -3,6 +3,8 @@ Networkteam:
   Neos:
     Util:
       locales: ['de_DE.utf8', 'de_DE', 'de']
+      dateHelper:
+        timezone: 'Europe/Berlin'
 
 Neos:
   Neos:
