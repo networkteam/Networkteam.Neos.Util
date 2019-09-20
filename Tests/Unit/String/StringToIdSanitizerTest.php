@@ -1,5 +1,5 @@
 <?php
-namespace Networkteam\Neos\Util\Tests\Unit\String;
+namespace Networkteam\Neos\Util\Tests\Unit\Sanitizer;
 
 /***************************************************************
  *  (c) 2014 networkteam GmbH - all rights reserved
@@ -13,7 +13,7 @@ class StringToIdSanitizerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider crazyStringProvider
 	 */
 	public function stringIsSanitizedAgainstRegex($string) {
-		$sanitizer = new \Networkteam\Neos\Util\String\StringToIdSanitizer();
+		$sanitizer = new \Networkteam\Neos\Util\Sanitizer\StringToIdSanitizer();
 		$id = $sanitizer->convertToId($string);
 		$this->assertRegExp('/' . $this->validIdRegex . '/', $id);
 	}
