@@ -25,7 +25,7 @@ class SanitizedIdViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractV
 		if(strlen($stringToSanitize) === 0) {
 			$stringToSanitize = $string;
 		}
-		$sanitizer = new \Networkteam\Neos\Util\String\StringToIdSanitizer();
+		$sanitizer = new \Networkteam\Neos\Util\Sanitizer\StringToIdSanitizer();
 
 		return $sanitizer->convertToId($stringToSanitize);
 	}

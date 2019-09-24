@@ -1,5 +1,5 @@
 <?php
-namespace Networkteam\Neos\Util\String;
+namespace Networkteam\Neos\Util\Sanitizer;
 
 /***************************************************************
  *  (c) 2014 networkteam GmbH - all rights reserved
