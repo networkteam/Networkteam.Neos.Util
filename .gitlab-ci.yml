@@ -1,0 +1,17 @@
+stages:
+  - php-test
+
+php-test:7.1:
+  stage: php-test
+  image: registry.networkteam.com/networkteam/build/php:7.1-test
+  script: check
+
+php-test:7.2:
+  stage: php-test
+  image: registry.networkteam.com/networkteam/build/php:7.2-test
+  script: check
+
+php-test:7.3:
+  stage: php-test
+  image: registry.networkteam.com/networkteam/build/php:7.3-test
+  script: check
