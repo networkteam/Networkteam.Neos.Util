@@ -4,8 +4,8 @@ prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	height = null
 	maximumWidth = 2560
 	maximumHeight = 2560
-	allowCropping = FALSE
-	allowUpScaling = FALSE
+	allowCropping = false
+	allowUpScaling = false
 	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
 
@@ -38,4 +38,27 @@ prototype(Networkteam.Neos.Util:ResourceUri) {
 prototype(Networkteam.Neos.Util:NodeUri) < prototype(Neos.Neos:NodeUri) {
     @class = 'Networkteam\\Neos\\Util\\FusionObjects\\NodeUriImplementation'
     disableAuthorizationChecks = false
+}
+
+# Modifies the request for child evaluations
+#
+# This can be useful to force a certain format for a part of the Fusion evaluation where this cannot be specified
+# explicitly but is derived from the current request (e.g. ConvertUris).
+#
+# Usage:
+# renderer = Networkteam.Neos.Util:WithRequest {
+#     format = 'html'
+#
+#     renderer = MyVendor.MySite:Components.Atoms.MyComponent {
+#         link = Neos.Neos:ConvertUris {
+#             value = ${q(node).property('link')}
+#         }
+#     }
+# }
+#
+#
+prototype(Networkteam.Neos.Util:WithRequest) {
+    @class = 'Networkteam\\Neos\\Util\\FusionObjects\\WithRequestImplementation'
+    format = null
+    renderer = null
 }
