@@ -21,10 +21,6 @@ Params:
 Returns Array with Image uri, width and height
 (Keys: src, width, height)
 
-**Networkteam.Neos.Util:Json.Collection**
-
-Inherits from Neos.Fusion:collection
-
 **Networkteam.Neos.Util:ResourceUri (not working in v 2.x)**
 
 Params:
