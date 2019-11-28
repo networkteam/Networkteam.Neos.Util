@@ -7,7 +7,7 @@
 
 ## Fusion Objects
 
-**Networkteam.Neos.Util:ImageUriAndDimensions:**
+### Networkteam.Neos.Util:ImageUriAndDimensions:**
 
 Params:
 * asset (required)
@@ -21,7 +21,7 @@ Params:
 Returns Array with Image uri, width and height
 (Keys: src, width, height)
 
-**Networkteam.Neos.Util:ResourceUri (not working in v 2.x)**
+### Networkteam.Neos.Util:ResourceUri (not working in v 2.x)
 
 Params:
 * path
@@ -32,14 +32,14 @@ Returns Cachebusted Resource Uri
 
 ## ViewHelper
 
-**SanitizedIdViewHelper**
+### SanitizedIdViewHelper
 
 Params:
 * string
 
 Returns ID from given string (does not maintain uniqueness)
 
-**StrftimeViewHelper**
+### StrftimeViewHelper
 
 Params:
 * date
@@ -49,7 +49,7 @@ Returns locally formatted DateTime
 
 ## Eel Helper
 
-**Networkteam.Neos.Util.Caching.entityTags**
+### Networkteam.Neos.Util.Caching.entityTags
 
 Params:
 * entities
@@ -57,7 +57,7 @@ Params:
 
 Returns array of prefixed caching entries for given entities
 
-**Networkteam.Neos.Util.String.nl2br**
+### Networkteam.Neos.Util.String.nl2br
 
 Params:
 * string (required)
