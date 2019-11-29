@@ -9,16 +9,6 @@ prototype(Networkteam.Neos.Util:ImageUriAndDimensions) {
 	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
 }
 
-prototype(Networkteam.Neos.Util:Json) {
-	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\JsonImplementation'
-}
-
-prototype(Networkteam.Neos.Util:Json.Object) < prototype(Neos.Fusion:RawArray)
-
-prototype(Networkteam.Neos.Util:Json.Collection) < prototype(Neos.Fusion:Collection) {
-	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\JsonCollectionImplementation'
-}
-
 # Renders an URI pointing to a resource including chacheBuster parameter if wanted
 #
 # Usage:
