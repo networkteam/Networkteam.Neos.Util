@@ -2,8 +2,9 @@
 
 ## Versions
 
-* Neos 3.*: `~2.0` (Development in `master` Branch)
-* Neos 2.*: `~1.0` (Development in `1.x` Branch)
+* Neos `2.*`: `~1.0` (Development in `1.x` Branch)
+* Neos `3.*`: `~2.0` (Development in `2.x` Branch)
+* Neos `4.* / 5.* / 7.*`: `~5.0` (Development in `master` Branch)
 
 ## Fusion Objects
 
