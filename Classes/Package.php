@@ -1,4 +1,5 @@
 <?php
+
 namespace Networkteam\Neos\Util;
 
 use Neos\Flow\Core\Bootstrap;
@@ -20,7 +21,7 @@ class Package extends BasePackage
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
 
         // Flush content cache tag "Asset_[identifier]" on Asset update
-        $dispatcher->connect(AssetService::class, 'assetUpdated', function(AssetInterface $asset) use ($bootstrap): void {
+        $dispatcher->connect(AssetService::class, 'assetUpdated', function (AssetInterface $asset) use ($bootstrap): void {
             $objectManager = $bootstrap->getObjectManager();
             $contentCache = $objectManager->get(ContentCache::class);
             $persistenceManager = $objectManager->get(PersistenceManagerInterface::class);

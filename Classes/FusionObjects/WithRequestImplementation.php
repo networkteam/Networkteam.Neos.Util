@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2019 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class WithRequestImplementation extends AbstractFusionObject
 {
-
     public function evaluate()
     {
         $controllerContext = $this->runtime->getControllerContext();
@@ -32,5 +32,4 @@ class WithRequestImplementation extends AbstractFusionObject
             }
         }
     }
-
 }

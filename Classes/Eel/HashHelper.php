@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\Eel;
 
 /***************************************************************
  *  (c) 2018 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\Eel;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Security\Cryptography\HashService;
 
 class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
 {
-
     /**
      * @Flow\Inject
      * @var HashService
@@ -27,10 +27,10 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
     }
 
     /**
-     * Builds a associative array with the original value as key, and the HMAC secured string as value.
+     * Builds an associative array with the original value as key, and the HMAC secured string as value.
      *
-     * @return array the given array of strings with each element HMAC appended
-     * @param mixed[] $array
+     * @param string[] $array
+     * @return array<string,string> the given array of strings with each element HMAC appended
      */
     public function toHmacSecuredArray(array $array): array
     {

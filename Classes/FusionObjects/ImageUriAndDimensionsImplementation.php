@@ -1,10 +1,10 @@
 <?php
 
-namespace Networkteam\Neos\Util\FusionObjects;
-
 /***************************************************************
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Media\Domain\Model\AssetInterface;
@@ -12,7 +12,6 @@ use Neos\Media\Domain\Service\AssetService;
 
 class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject
 {
-
     /**
      * Resource publisher
      *
