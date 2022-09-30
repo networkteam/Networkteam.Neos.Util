@@ -2,30 +2,25 @@ stages:
   - test
   - deploy
 
-prepare:
-  stage: test
-  image: registry.networkteam.com/networkteam/build/php81
-  script:
-    - composer test:prepare
-  artifacts:
-    paths:
-      - .Build
-
 phpstan:
   stage: test
   image: registry.networkteam.com/networkteam/build/php81
   script:
     - composer phpstan
-  dependencies:
-    - prepare
+  cache:
+    key: 'build-cache'
+    paths:
+      - .Build
 
 phpcs:
   stage: test
   image: registry.networkteam.com/networkteam/build/php81
   script:
     - composer phpcs
-  dependencies:
-    - prepare
+  cache:
+    key: 'build-cache'
+    paths:
+      - .Build
 
 deploy:
   stage: deploy

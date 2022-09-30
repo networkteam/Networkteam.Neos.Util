@@ -29,7 +29,7 @@
         ],
         "phpcs": [
             "@test:prepare",
-            ".Build/vendor/bin/phpcs --standard=PSR12 -n --error-severity=4 --colors Classes"
+            ".Build/vendor/bin/phpcs -p --standard=PSR12 -n --error-severity=4 --colors Classes"
         ],
         "test:unit": [
             "@test:prepare",
