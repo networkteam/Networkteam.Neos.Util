@@ -19,10 +19,8 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 
     /**
      * If true, authorization checks (CSRF token, policies, content security, ...) for getNode() will be switched off
-     *
-     * @return boolean
      */
-    public function getDisableAuthorizationChecks()
+    public function getDisableAuthorizationChecks(): bool
     {
         return (boolean)$this->fusionValue('disableAuthorizationChecks');
     }
@@ -33,7 +31,7 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 
         if ($this->getDisableAuthorizationChecks()) {
             // Build context explicitly without authorization checks
-            $this->securityContext->withoutAuthorizationChecks(function () use (&$result) {
+            $this->securityContext->withoutAuthorizationChecks(function () use (&$result): void {
                 $result = $this->originalEvaluate();
             });
         } else {
@@ -43,7 +41,7 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
         return $result;
     }
 
-    public function originalEvaluate() {
+    public function originalEvaluate(): string {
         return parent::evaluate();
     }
 

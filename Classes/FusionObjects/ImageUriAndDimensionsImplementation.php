@@ -1,4 +1,5 @@
 <?php
+
 namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
@@ -9,100 +10,95 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Media\Domain\Model\AssetInterface;
 use Neos\Media\Domain\Service\AssetService;
 
-class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject {
+class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject
+{
 
-	/**
-	 * Resource publisher
-	 *
-	 * @Flow\Inject
-	 * @var AssetService
-	 */
-	protected $assetService;
+    /**
+     * Resource publisher
+     *
+     * @Flow\Inject
+     * @var AssetService
+     */
+    protected $assetService;
 
-	/**
-	 * Asset
-	 *
-	 * @return AssetInterface
-	 */
-	public function getAsset() {
-		return $this->fusionValue('asset');
-	}
+    /**
+     * Asset
+     */
+    public function getAsset(): AssetInterface
+    {
+        return $this->fusionValue('asset');
+    }
 
-	/**
-	 * Width
-	 *
-	 * @return integer
-	 */
-	public function getWidth() {
-		return $this->fusionValue('maximumWidth');
-	}
+    /**
+     * Width
+     */
+    public function getWidth(): int
+    {
+        return $this->fusionValue('maximumWidth');
+    }
 
-	/**
-	 * Height
-	 *
-	 * @return integer
-	 */
-	public function getHeight() {
-		return $this->fusionValue('maximumHeight');
-	}
+    /**
+     * Height
+     */
+    public function getHeight(): int
+    {
+        return $this->fusionValue('maximumHeight');
+    }
 
-	/**
-	 * MaximumWidth
-	 *
-	 * @return integer
-	 */
-	public function getMaximumWidth() {
-		return $this->fusionValue('maximumWidth');
-	}
+    /**
+     * MaximumWidth
+     */
+    public function getMaximumWidth(): int
+    {
+        return $this->fusionValue('maximumWidth');
+    }
 
-	/**
-	 * MaximumHeight
-	 *
-	 * @return integer
-	 */
-	public function getMaximumHeight() {
-		return $this->fusionValue('maximumHeight');
-	}
+    /**
+     * MaximumHeight
+     */
+    public function getMaximumHeight(): int
+    {
+        return $this->fusionValue('maximumHeight');
+    }
 
-	/**
-	 * AllowCropping
-	 *
-	 * @return boolean
-	 */
-	public function getAllowCropping() {
-		return $this->fusionValue('allowCropping');
-	}
+    /**
+     * AllowCropping
+     */
+    public function getAllowCropping(): bool
+    {
+        return $this->fusionValue('allowCropping');
+    }
 
-	/**
-	 * AllowUpScaling
-	 *
-	 * @return boolean
-	 */
-	public function getAllowUpScaling() {
-		return $this->fusionValue('allowUpScaling');
-	}
+    /**
+     * AllowUpScaling
+     */
+    public function getAllowUpScaling(): bool
+    {
+        return $this->fusionValue('allowUpScaling');
+    }
 
-	/**
-	 * Returns the processed image path and dimensions
-	 *
-	 * @return array Image src and dimensions (keys "src", "width", "height")
-	 */
-	public function evaluate() {
-		$asset = $this->getAsset();
+    /**
+     * Returns the processed image path and dimensions
+     *
+     * @return mixed[]|null Image src and dimensions (keys "src", "width", "height")
+     */
+    public function evaluate(): ?array
+    {
+        $asset = $this->getAsset();
 
-		if (!$asset instanceof AssetInterface) {
-			throw new \Exception('No asset given for rendering.', 1435754424);
-		}
+        if (!$asset instanceof AssetInterface) {
+            throw new \Exception('No asset given for rendering.', 1435754424);
+        }
 
-		$width = $this->getWidth();
-		$height = $this->getHeight();
-		$maximumWidth = $this->getMaximumWidth();
-		$maximumHeight = $this->getMaximumHeight();
-		$allowCropping = $this->getAllowCropping();
-		$allowUpScaling = $this->getAllowUpScaling();
+        $width = $this->getWidth();
+        $height = $this->getHeight();
+        $maximumWidth = $this->getMaximumWidth();
+        $maximumHeight = $this->getMaximumHeight();
+        $allowCropping = $this->getAllowCropping();
+        $allowUpScaling = $this->getAllowUpScaling();
 
-		$thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration($width, $maximumWidth, $height, $maximumHeight, $allowCropping, $allowUpScaling);
+        $thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration($width, $maximumWidth, $height, $maximumHeight, $allowCropping, $allowUpScaling);
 
-		return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $thumbnailConfiguration);
-	}
+        return $this->assetService->getThumbnailUriAndSizeForAsset($asset, $thumbnailConfiguration);
+    }
 }
