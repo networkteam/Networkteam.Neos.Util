@@ -12,6 +12,26 @@
             "Networkteam\\Neos\\Util\\": "Classes"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "neos/composer-plugin": false
+        }
+    },
+    "scripts": {
+        "test:prepare": [
+            "mkdir -p .Build",
+            "cp composer.json .Build",
+            "composer install -d .Build"
+        ],
+        "phpstan": [
+            "@test:prepare",
+          ".Build/vendor/bin/phpstan"
+        ],
+        "test:unit": [
+            "@test:prepare",
+            ".Build/vendor/bin/phpunit Tests/Unit"
+        ]
+    },
     "extra": {
         "applied-flow-migrations": [
             "TYPO3.FLOW3-201201261636",

@@ -1,0 +1,9 @@
+parameters:
+    bootstrapFiles:
+        - .Build/vendor/autoload.php
+
+    paths:
+        - Classes
+
+    level: 5
+
