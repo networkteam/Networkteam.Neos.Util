@@ -17,27 +17,17 @@ class DateHelper extends \Neos\Eel\Helper\DateHelper
      */
     protected $timezone;
 
-    /**
-     * @param string $format
-     * @param int $timestamp
-     * @return string
-     */
-    public function strftime($format, $timestamp) {
+    public function strftime(string $format, int $timestamp): string|bool {
         return strftime($format, $timestamp);
     }
 
-    /**
-     * @param \DateTime $date
-     * @param string $timezone
-     * @return \DateTime|null
-     */
     public function inTimezone(\DateTime $date, string $timezone): ?\DateTime
     {
         try {
             $dateTimeZone = new \DateTimeZone($timezone);
             $date = clone $date;
             $date->setTimezone($dateTimeZone);
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             $date = null;
         }
 
@@ -45,8 +35,6 @@ class DateHelper extends \Neos\Eel\Helper\DateHelper
     }
 
     /**
-     * @param \DateTime $date
-     * @return \DateTime|null
      * @throws InvalidConfigurationException
      */
     public function inLocalTimezone(\DateTime $date): ?\DateTime
@@ -60,9 +48,6 @@ class DateHelper extends \Neos\Eel\Helper\DateHelper
 
     /**
      * Equivalent method to JavaScript Date.prototype.toISOString
-     *
-     * @param \DateTime $date
-     * @return string
      */
     public function toISOString(\DateTime $date): string
     {

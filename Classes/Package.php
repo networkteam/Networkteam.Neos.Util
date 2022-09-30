@@ -14,14 +14,13 @@ class Package extends BasePackage
      * Invokes custom PHP code directly after the package manager has been initialized.
      *
      * @param Bootstrap $bootstrap The current bootstrap
-     * @return void
      */
-    public function boot(Bootstrap $bootstrap)
+    public function boot(Bootstrap $bootstrap): void
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
 
         // Flush content cache tag "Asset_[identifier]" on Asset update
-        $dispatcher->connect(AssetService::class, 'assetUpdated', function(AssetInterface $asset) use ($bootstrap) {
+        $dispatcher->connect(AssetService::class, 'assetUpdated', function(AssetInterface $asset) use ($bootstrap): void {
             $objectManager = $bootstrap->getObjectManager();
             $contentCache = $objectManager->get(ContentCache::class);
             $persistenceManager = $objectManager->get(PersistenceManagerInterface::class);

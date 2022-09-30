@@ -20,14 +20,12 @@ class CachingHelper implements ProtectedContextAwareInterface
     /**
      * Get entry tags for an array of entities
      *
-     * @param array $entities
-     * @param string $prefix
-     * @return array
      * @throws Exception
+     * @return string[]
      */
-    public function entityTags(array $entities, $prefix)
+    public function entityTags(array $entities, string $prefix): array
     {
-        $entryTags = array();
+        $entryTags = [];
         foreach ($entities as $entity) {
             $identifier = $this->persistenceManager->getIdentifierByObject($entity);
             if ($identifier !== null) {
@@ -41,9 +39,8 @@ class CachingHelper implements ProtectedContextAwareInterface
      * All methods are considered safe
      *
      * @param string $methodName
-     * @return boolean
      */
-    public function allowsCallOfMethod($methodName)
+    public function allowsCallOfMethod($methodName): bool
     {
         return true;
     }

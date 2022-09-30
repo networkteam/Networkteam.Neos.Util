@@ -19,11 +19,9 @@ class WithRequestImplementation extends AbstractFusionObject
         $withFormat = $this->fusionValue('format');
         $originalFormat = null;
 
-        if ($request instanceof \Neos\Flow\Mvc\ActionRequest) {
-            if (!empty($withFormat)) {
-                $originalFormat = $request->getFormat();
-                $request->setFormat($withFormat);
-            }
+        if ($request instanceof \Neos\Flow\Mvc\ActionRequest && !empty($withFormat)) {
+            $originalFormat = $request->getFormat();
+            $request->setFormat($withFormat);
         }
 
         try {

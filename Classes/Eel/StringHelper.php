@@ -12,27 +12,22 @@ use Neos\Neos\Exception;
 class StringHelper implements ProtectedContextAwareInterface
 {
     /**
-     * @param String $string
-     * @param Boolean $is_xhtml
-     * @return String
      * @throws Exception
      */
-    public function nl2br(string $string, bool $is_xhtml = true) {
+    public function nl2br(string $string, bool $is_xhtml = true): string {
 
         if (!is_string($string)) {
             throw new Exception(sprintf('String expected by this helper, given: "%s".', gettype($string)), 1520777668);
         }
 
-        $newString = nl2br($string, $is_xhtml);
-
-        return $newString;
+        return nl2br($string, $is_xhtml);
     }
     
-    public function isUuid(?string $nodeIdentifier) {
+    public function isUuid(?string $nodeIdentifier): bool {
         return preg_match(UuidValidator::PATTERN_MATCH_UUID, $nodeIdentifier) === 1;
     }
 
-    public function allowsCallOfMethod($methodName) {
+    public function allowsCallOfMethod($methodName): bool {
         return true;
     }
 
