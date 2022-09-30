@@ -1,4 +1,5 @@
 <?php
+
 namespace Networkteam\Neos\Util\Eel;
 
 use Neos\Flow\Annotations as Flow;
@@ -10,7 +11,6 @@ use Neos\Neos\Exception;
  */
 class CachingHelper implements ProtectedContextAwareInterface
 {
-
     /**
      * @Flow\Inject
      * @var \Neos\Flow\Persistence\PersistenceManagerInterface
@@ -20,8 +20,8 @@ class CachingHelper implements ProtectedContextAwareInterface
     /**
      * Get entry tags for an array of entities
      *
-     * @throws Exception
      * @return string[]
+     * @throws Exception
      */
     public function entityTags(array $entities, string $prefix): array
     {

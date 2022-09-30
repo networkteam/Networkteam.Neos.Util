@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2018 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Security\Context;
 
 class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 {
-
     /**
      * @Flow\Inject
      * @var Context
@@ -22,7 +22,7 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
      */
     public function getDisableAuthorizationChecks(): bool
     {
-        return (boolean)$this->fusionValue('disableAuthorizationChecks');
+        return (bool)$this->fusionValue('disableAuthorizationChecks');
     }
 
     public function evaluate()
@@ -41,8 +41,8 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
         return $result;
     }
 
-    public function originalEvaluate(): string {
+    public function originalEvaluate(): string
+    {
         return parent::evaluate();
     }
-
 }

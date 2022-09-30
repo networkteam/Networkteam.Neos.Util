@@ -1,23 +1,24 @@
 <?php
-namespace Networkteam\Neos\Util\Eel;
 
 /***************************************************************
  *  (c) 2018 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\Eel;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Configuration\Exception\InvalidConfigurationException;
 
 class DateHelper extends \Neos\Eel\Helper\DateHelper
 {
-
     /**
      * @Flow\InjectConfiguration(path="dateHelper.timezone")
      * @var string
      */
     protected $timezone;
 
-    public function strftime(string $format, int $timestamp): string|bool {
+    public function strftime(string $format, int $timestamp): string|bool
+    {
         return strftime($format, $timestamp);
     }
 

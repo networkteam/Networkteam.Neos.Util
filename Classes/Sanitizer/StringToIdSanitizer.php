@@ -5,9 +5,9 @@ namespace Networkteam\Neos\Util\Sanitizer;
 /***************************************************************
  *  (c) 2014 networkteam GmbH - all rights reserved
  ***************************************************************/
+
 class StringToIdSanitizer implements \Neos\Eel\ProtectedContextAwareInterface
 {
-
     /**
      * @var string
      */
@@ -21,13 +21,13 @@ class StringToIdSanitizer implements \Neos\Eel\ProtectedContextAwareInterface
     public function convertToId(string $string): string
     {
         $idString = '';
-        $isFirst = TRUE;
+        $isFirst = true;
         $stringArr = str_split($string);
         foreach ($stringArr as $character) {
             if ($isFirst && !preg_match($this->validFirstCharacters, $character)) {
                 continue;
             }
-            $isFirst = FALSE;
+            $isFirst = false;
             if (!preg_match($this->validCharacters, $character)) {
                 $character = '-';
             }
@@ -52,6 +52,6 @@ class StringToIdSanitizer implements \Neos\Eel\ProtectedContextAwareInterface
      */
     public function allowsCallOfMethod($methodName): bool
     {
-        return TRUE;
+        return true;
     }
 }

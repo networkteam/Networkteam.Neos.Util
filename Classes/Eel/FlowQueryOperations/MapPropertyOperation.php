@@ -1,10 +1,10 @@
 <?php
 
-namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
-
 /***************************************************************
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
 
 use Neos\ContentRepository\Core\Projection\ContentGraph\Node;
 use Neos\Eel\FlowQuery\FlowQuery;
@@ -18,20 +18,19 @@ use Neos\Utility\ObjectAccess;
  */
 class MapPropertyOperation extends AbstractOperation
 {
-
     /**
      * {@inheritdoc}
      *
      * @var string
      */
-    static protected $shortName = 'mapProperty';
+    protected static $shortName = 'mapProperty';
 
     /**
      * {@inheritdoc}
      *
      * @var boolean
      */
-    static protected $final = TRUE;
+    protected static $final = true;
 
     /**
      * {@inheritdoc}
@@ -43,10 +42,10 @@ class MapPropertyOperation extends AbstractOperation
     public function canEvaluate($context): bool
     {
         if (empty($context)) {
-            return TRUE;
+            return true;
         }
         $firstElement = reset($context);
-        return $firstElement === NULL || $firstElement instanceof Node;
+        return $firstElement === null || $firstElement instanceof Node;
     }
 
     /**
