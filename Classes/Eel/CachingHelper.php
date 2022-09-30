@@ -27,10 +27,6 @@ class CachingHelper implements ProtectedContextAwareInterface
      */
     public function entityTags(array $entities, $prefix)
     {
-        if (!is_array($entities) && !$entities instanceof \Traversable) {
-            throw new Exception(sprintf('FlowQuery result, Array or Traversable expected by this helper, given: "%s".', gettype($entities)), 1501252625);
-        }
-
         $entryTags = array();
         foreach ($entities as $entity) {
             $identifier = $this->persistenceManager->getIdentifierByObject($entity);
