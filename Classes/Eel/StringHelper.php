@@ -27,7 +27,16 @@ class StringHelper implements ProtectedContextAwareInterface
 
         return $newString;
     }
-    
+
+    /**
+     * @param string $string
+     * @param int $times
+     * @return string
+     */
+    public function repeat(string $string, int $times) {
+        return str_repeat($string, $times);
+    }
+
     public function isUuid(?string $nodeIdentifier) {
         return preg_match(UuidValidator::PATTERN_MATCH_UUID, $nodeIdentifier) === 1;
     }
