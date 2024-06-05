@@ -42,7 +42,7 @@ class CachingHelper implements ProtectedContextAwareInterface
     }
 
     /**
-     * @param string $className Fully qualified class name of entity, i.e. "\AcmeCom\SomePackage\Domain\Model\Foobar"
+     * @param string $className Fully qualified class name of entity, i.e. "AcmeCom\SomePackage\Domain\Model\Foobar"
      * @return string
      */
     public static function entityTypeTag(string $className)
