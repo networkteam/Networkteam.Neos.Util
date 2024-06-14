@@ -52,3 +52,37 @@ prototype(Networkteam.Neos.Util:WithRequest) {
     format = null
     renderer = null
 }
+
+# Modify given Uri
+#
+# Usage:
+#
+# renderer = Networkteam.Neos.Util:Uri {
+#     uri = 'https://acme.tld/foo/bar'
+#     path = 'extend/path'
+#     queryValues = Neos.Fusion:DataStructure {
+#         lorem = 'Hello'
+#         ipsum = 'world'
+#         foo = null
+#         bar = ''
+#     }
+#     //query = 'foo&bar&batz'
+#     appendPath = true|false
+# }
+#
+# Result:
+#
+# appendPath = true  => https://acme.tld/foo/bar/extend/path?lorem=Hello&ipsum=world
+# appendPath = false => https://acme.tld/extend/path?lorem=Hello&ipsum=world
+# usage with "query" => https://acme.tld/foo/bar/extend/path?foo&bar&batz
+#
+prototype(Networkteam.Neos.Util:Uri) {
+	@class = 'Networkteam\\Neos\\Util\\FusionObjects\\UriImplementation'
+	uri = null
+	path = null
+	query = ''
+	queryValues = Neos.Fusion:DataStructure
+	fragment = null
+
+	appendPath = true
+}
