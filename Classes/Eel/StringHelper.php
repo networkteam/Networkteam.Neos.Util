@@ -41,6 +41,11 @@ class StringHelper implements ProtectedContextAwareInterface
         return preg_match(UuidValidator::PATTERN_MATCH_UUID, $nodeIdentifier) === 1;
     }
 
+    public function htmlspecialcharsDecode(string $string)
+    {
+        return htmlspecialchars_decode($string);
+    }
+
     public function allowsCallOfMethod($methodName) {
         return true;
     }
