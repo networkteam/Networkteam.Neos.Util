@@ -25,15 +25,12 @@ class ArrayHelper implements ProtectedContextAwareInterface
             return null;
         }
 
-        $hasIntersection = false;
         foreach ($array1 as $elem1) {
-            foreach ($array2 as $elem2) {
-                if ($elem1 == $elem2) {
-                    $hasIntersection = true;
-                }
+            if (in_array($elem1, $array2, true)){
+                return true;
             }
         }
-        return $hasIntersection;
+        return false;
     }
 
     public function allowsCallOfMethod($methodName)
