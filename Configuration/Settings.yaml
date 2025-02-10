@@ -18,3 +18,4 @@ Neos:
       Networkteam.Neos.Util.Format.SanitizedId: Networkteam\Neos\Util\Sanitizer\StringToIdSanitizer
       Networkteam.Neos.Util.Date: Networkteam\Neos\Util\Eel\DateHelper
       Networkteam.Neos.Util.Hash: Networkteam\Neos\Util\Eel\HashHelper
+      Networkteam.Neos.Util.Array: Networkteam\Neos\Util\Eel\ArrayHelper
