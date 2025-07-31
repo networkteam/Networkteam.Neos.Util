@@ -2,9 +2,12 @@
 
 ## Versions
 
-* Neos `2.*`: `~1.0` (Development in `1.x` Branch)
-* Neos `3.*`: `~2.0` (Development in `2.x` Branch)
-* Neos `4.* / 5.* / 7.*`: `~5.0` (Development in `master` Branch)
+| Neos CMS | Plugin Version | branch name |
+|----------|----------------|-------------|
+| >= 2.0   | 1.x            | `1.x`       |
+| >= 3.0   | 2.x            | `2.x`       |
+| >= 4.0   | 5.x            | `5.x`       |
+| >= 9.0   | 6.x            | `master`    |
 
 ## Fusion Objects
 
