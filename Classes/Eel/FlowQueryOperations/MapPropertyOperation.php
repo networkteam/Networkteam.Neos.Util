@@ -42,7 +42,7 @@ class MapPropertyOperation extends AbstractOperation {
 			return TRUE;
 		}
 		$firstElement = reset($context);
-		return $firstElement === NULL || $firstElement instanceof NodeInterface;
+		return $firstElement === NULL || $firstElement instanceof \Neos\ContentRepository\Core\Projection\ContentGraph\Node;
 	}
 
 	/**
@@ -61,7 +61,7 @@ class MapPropertyOperation extends AbstractOperation {
 
 			$result = array();
 			foreach ($context as $element) {
-				if ($element instanceof NodeInterface) {
+				if ($element instanceof \Neos\ContentRepository\Core\Projection\ContentGraph\Node) {
 					if ($propertyPath[0] === '_') {
 						$result[] = \Neos\Utility\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
 					} else {
