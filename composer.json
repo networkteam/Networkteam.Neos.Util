@@ -7,6 +7,9 @@
         "neos/media": "*",
         "neos/neos": "^9.0"
     },
+    "require-dev": {
+        "neos/contentgraph-doctrinedbaladapter": "^9.0"
+    },
     "autoload": {
         "psr-4": {
             "Networkteam\\Neos\\Util\\": "Classes"
@@ -107,9 +110,5 @@
             "Neos.Flow-20220318174300",
             "Neos.Fusion-20220326120900"
         ]
-    },
-    "require-dev": {
-        "neos/contentgraph-doctrinedbaladapter": "^9.0"
-    },
     }
 }
