@@ -5,13 +5,14 @@
     "require": {
         "neos/flow": "*",
         "neos/media": "*",
-        "neos/neos": "^5.0 || ^7.0 || ^8.0"
+        "neos/neos": "^9.0"
     },
     "autoload": {
         "psr-4": {
             "Networkteam\\Neos\\Util\\": "Classes"
         }
     },
+    "license": "MIT",
     "extra": {
         "applied-flow-migrations": [
             "TYPO3.FLOW3-201201261636",
