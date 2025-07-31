@@ -5,10 +5,12 @@ namespace Networkteam\Neos\Util\Eel\FlowQueryOperations;
  *  (c) 2015 networkteam GmbH - all rights reserved
  ***************************************************************/
 
+use Neos\ContentRepository\Core\Projection\ContentGraph\Node;
 use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\FlowQueryException;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
-use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Utility\ObjectAccess;
 
 /**
  * Retrieve a property of all results in the context and map it to an array
@@ -42,7 +44,7 @@ class MapPropertyOperation extends AbstractOperation {
 			return TRUE;
 		}
 		$firstElement = reset($context);
-		return $firstElement === NULL || $firstElement instanceof \Neos\ContentRepository\Core\Projection\ContentGraph\Node;
+		return $firstElement === NULL || $firstElement instanceof Node;
 	}
 
 	/**
@@ -54,16 +56,16 @@ class MapPropertyOperation extends AbstractOperation {
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments) {
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \Neos\Eel\FlowQuery\FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
+			throw new FlowQueryException('mapProperty() does not support returning all attributes', 1429712387);
 		} else {
 			$context = $flowQuery->getContext();
 			$propertyPath = $arguments[0];
 
 			$result = array();
 			foreach ($context as $element) {
-				if ($element instanceof \Neos\ContentRepository\Core\Projection\ContentGraph\Node) {
+				if ($element instanceof Node) {
 					if ($propertyPath[0] === '_') {
-						$result[] = \Neos\Utility\ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
+						$result[] = ObjectAccess::getPropertyPath($element, substr($propertyPath, 1));
 					} else {
 						$result[] = $element->getProperty($propertyPath);
 					}
