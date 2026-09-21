@@ -24,6 +24,8 @@ class ArrayHelper implements ProtectedContextAwareInterface
             return null;
         }
 
+        $array2 = is_array($array2) ? $array2 : iterator_to_array($array2);
+
         foreach ($array1 as $elem1) {
             if (in_array($elem1, $array2, true)) {
                 return true;
