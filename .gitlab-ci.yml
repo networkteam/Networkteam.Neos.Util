@@ -25,6 +25,7 @@ phpcs:
         - composer.json
     paths:
       - .Build
+    policy: pull
 
 test:unit:
   stage: test
@@ -37,6 +38,7 @@ test:unit:
         - composer.json
     paths:
       - .Build
+    policy: pull
 
 deploy:
   stage: deploy
