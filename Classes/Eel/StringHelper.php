@@ -30,7 +30,8 @@ class StringHelper implements ProtectedContextAwareInterface
      * @param int $times
      * @return string
      */
-    public function repeat(string $string, int $times) {
+    public function repeat(string $string, int $times)
+    {
         return str_repeat($string, $times);
     }
 

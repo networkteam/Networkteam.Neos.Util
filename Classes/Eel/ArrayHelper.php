@@ -9,13 +9,12 @@ use Neos\Eel\ProtectedContextAwareInterface;
  */
 class ArrayHelper implements ProtectedContextAwareInterface
 {
-
     /**
      * Returns true if 2 arrays share at least one element, otherwise returns false
      * Returns null if any of the parameters is not an array.
      *
-     * @param array $array1
-     * @param array $array2
+     * @param mixed $array1
+     * @param mixed $array2
      * @return bool|null
      */
     public function hasElementIntersection($array1, $array2): ?bool
@@ -26,7 +25,7 @@ class ArrayHelper implements ProtectedContextAwareInterface
         }
 
         foreach ($array1 as $elem1) {
-            if (in_array($elem1, $array2, true)){
+            if (in_array($elem1, $array2, true)) {
                 return true;
             }
         }
