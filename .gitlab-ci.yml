@@ -8,7 +8,9 @@ phpstan:
   script:
     - composer phpstan
   cache:
-    key: 'build-cache'
+    key:
+      files:
+        - composer.json
     paths:
       - .Build
 
@@ -18,7 +20,9 @@ phpcs:
   script:
     - composer phpcs
   cache:
-    key: 'build-cache'
+    key:
+      files:
+        - composer.json
     paths:
       - .Build
 
@@ -28,7 +32,9 @@ test:unit:
   script:
     - composer test:unit
   cache:
-    key: 'build-cache'
+    key:
+      files:
+        - composer.json
     paths:
       - .Build
 
