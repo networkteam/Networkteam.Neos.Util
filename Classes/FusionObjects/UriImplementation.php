@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2024 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use GuzzleHttp\Psr7\Uri;
 use Neos\Flow\Annotations as Flow;
 
 class UriImplementation extends \Neos\Fusion\FusionObjects\AbstractFusionObject
 {
-
     public function evaluate(): string
     {
         $uri = $this->getUri();

@@ -1,17 +1,50 @@
 stages:
-  - php-test
+  - test
+  - deploy
 
-php-test:7.1:
-  stage: php-test
-  image: registry.networkteam.com/networkteam/build/php:7.1-test
-  script: check
+phpstan:
+  stage: test
+  image: registry.networkteam.com/networkteam/build/php84
+  script:
+    - composer phpstan
+  cache:
+    key:
+      files:
+        - composer.json
+    paths:
+      - .Build
 
-php-test:7.2:
-  stage: php-test
-  image: registry.networkteam.com/networkteam/build/php:7.2-test
-  script: check
+phpcs:
+  stage: test
+  image: registry.networkteam.com/networkteam/build/php84
+  script:
+    - composer phpcs
+  cache:
+    key:
+      files:
+        - composer.json
+    paths:
+      - .Build
+    policy: pull
 
-php-test:7.3:
-  stage: php-test
-  image: registry.networkteam.com/networkteam/build/php:7.3-test
-  script: check
+test:unit:
+  stage: test
+  image: registry.networkteam.com/networkteam/build/php84
+  script:
+    - composer test:unit
+  cache:
+    key:
+      files:
+        - composer.json
+    paths:
+      - .Build
+    policy: pull
+
+deploy:
+  stage: deploy
+  image: curlimages/curl:7.74.0
+  script:
+    - 'curl -v --header "Job-Token: $CI_JOB_TOKEN" --data "tag=$CI_COMMIT_TAG" "https://gitlab.networkteam.com/api/v4/projects/$CI_PROJECT_ID/packages/composer"'
+  only:
+    refs:
+      - tags

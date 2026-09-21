@@ -1,5 +1,15 @@
 # Networkteam.Neos.Util
 
+## Development
+
+`devbox shell` startet eine Shell mit PHP und Composer. `composer phpstan` und `composer phpcs` prüfen den Code statisch bzw. auf Codingstandards und sollten vor jedem Commit erfolgreich durchlaufen.
+
+```
+devbox shell
+composer phpstan
+composer phpcs
+```
+
 ## Versions
 
 | Neos CMS | Plugin Version | branch name |

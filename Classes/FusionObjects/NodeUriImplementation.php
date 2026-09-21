@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2018 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Security\Context;
 
 class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 {
-
     /**
      * @Flow\Inject
      * @var Context
@@ -19,12 +19,10 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 
     /**
      * If true, authorization checks (CSRF token, policies, content security, ...) for getNode() will be switched off
-     *
-     * @return boolean
      */
-    public function getDisableAuthorizationChecks()
+    public function getDisableAuthorizationChecks(): bool
     {
-        return (boolean)$this->fusionValue('disableAuthorizationChecks');
+        return (bool)$this->fusionValue('disableAuthorizationChecks');
     }
 
     public function evaluate()
@@ -33,7 +31,7 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
 
         if ($this->getDisableAuthorizationChecks()) {
             // Build context explicitly without authorization checks
-            $this->securityContext->withoutAuthorizationChecks(function () use (&$result) {
+            $this->securityContext->withoutAuthorizationChecks(function () use (&$result): void {
                 $result = $this->originalEvaluate();
             });
         } else {
@@ -43,8 +41,8 @@ class NodeUriImplementation extends \Neos\Neos\Fusion\NodeUriImplementation
         return $result;
     }
 
-    public function originalEvaluate() {
+    public function originalEvaluate(): string
+    {
         return parent::evaluate();
     }
-
 }

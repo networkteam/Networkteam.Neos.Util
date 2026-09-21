@@ -12,7 +12,43 @@
             "Networkteam\\Neos\\Util\\": "Classes"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Neos\\Flow\\Tests\\": "vendor/neos/flow/Tests"
+        }
+    },
     "license": "MIT",
+    "config": {
+        "allow-plugins": {
+            "neos/composer-plugin": false
+        }
+    },
+    "scripts": {
+        "test:prepare": [
+            "mkdir -p .Build",
+            "cp composer.json .Build",
+            "ln -sfn ../Classes .Build/Classes",
+            "composer install -d .Build"
+        ],
+        "phpstan": [
+            "@test:prepare",
+            ".Build/vendor/bin/phpstan"
+        ],
+        "phpcs": [
+            "@test:prepare",
+            ".Build/vendor/bin/phpcs -p --standard=PSR12 -n --error-severity=4 --colors Classes"
+        ],
+        "test:unit": [
+            "@test:prepare",
+            ".Build/vendor/bin/phpunit Tests/Unit"
+        ]
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpstan/phpstan": "^1.8",
+        "neos/contentgraph-doctrinedbaladapter": "^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
     "extra": {
         "applied-flow-migrations": [
             "TYPO3.FLOW3-201201261636",

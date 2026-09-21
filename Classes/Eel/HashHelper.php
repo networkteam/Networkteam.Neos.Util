@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\Eel;
 
 /***************************************************************
  *  (c) 2018 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\Eel;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Security\Cryptography\HashService;
 
 class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
 {
-
     /**
      * @Flow\Inject
      * @var HashService
@@ -21,20 +21,20 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
      * @param $string
      * @return string The string with appended HMAC
      */
-    public function appendHmac($string)
+    public function appendHmac($string): string
     {
         return $this->hashService->appendHmac($string);
     }
 
     /**
-     * Builds a associative array with the original value as key, and the HMAC secured string as value.
+     * Builds an associative array with the original value as key, and the HMAC secured string as value.
      *
-     * @param array $array
-     * @return array the given array of strings with each element HMAC appended
+     * @param string[] $array
+     * @return array<string,string> the given array of strings with each element HMAC appended
      */
-    public function toHmacSecuredArray($array)
+    public function toHmacSecuredArray(array $array): array
     {
-        $result = array();
+        $result = [];
         foreach ($array as $value) {
             $result[$value] = $this->appendHmac($value);
         }
@@ -46,7 +46,7 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
         try {
             $this->hashService->validateAndStripHmac($string);
             return true;
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             return false;
         }
     }
@@ -55,7 +55,7 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
     {
         try {
             return $this->hashService->validateAndStripHmac($string);
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             return '';
         }
     }
@@ -63,7 +63,7 @@ class HashHelper implements \Neos\Eel\ProtectedContextAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function allowsCallOfMethod($methodName)
+    public function allowsCallOfMethod($methodName): bool
     {
         return true;
     }
