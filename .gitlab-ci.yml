@@ -4,7 +4,7 @@ stages:
 
 phpstan:
   stage: test
-  image: registry.networkteam.com/networkteam/build/php81
+  image: registry.networkteam.com/networkteam/build/php84
   script:
     - composer phpstan
   cache:
@@ -14,7 +14,7 @@ phpstan:
 
 phpcs:
   stage: test
-  image: registry.networkteam.com/networkteam/build/php81
+  image: registry.networkteam.com/networkteam/build/php84
   script:
     - composer phpcs
   cache:
