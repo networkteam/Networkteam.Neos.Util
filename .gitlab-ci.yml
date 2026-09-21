@@ -22,6 +22,16 @@ phpcs:
     paths:
       - .Build
 
+test:unit:
+  stage: test
+  image: registry.networkteam.com/networkteam/build/php84
+  script:
+    - composer test:unit
+  cache:
+    key: 'build-cache'
+    paths:
+      - .Build
+
 deploy:
   stage: deploy
   image: curlimages/curl:7.74.0
