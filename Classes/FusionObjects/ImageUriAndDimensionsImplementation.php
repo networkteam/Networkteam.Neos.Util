@@ -23,7 +23,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
     /**
      * Asset
      */
-    public function getAsset(): AssetInterface
+    public function getAsset(): ?AssetInterface
     {
         return $this->fusionValue('asset');
     }
@@ -31,7 +31,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
     /**
      * Width
      */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->fusionValue('maximumWidth');
     }
@@ -39,7 +39,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
     /**
      * Height
      */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->fusionValue('maximumHeight');
     }
@@ -47,7 +47,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
     /**
      * MaximumWidth
      */
-    public function getMaximumWidth(): int
+    public function getMaximumWidth(): ?int
     {
         return $this->fusionValue('maximumWidth');
     }
@@ -55,7 +55,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
     /**
      * MaximumHeight
      */
-    public function getMaximumHeight(): int
+    public function getMaximumHeight(): ?int
     {
         return $this->fusionValue('maximumHeight');
     }
