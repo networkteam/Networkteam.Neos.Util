@@ -1,0 +1,48 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-09-19T10:20:31Z",
+      "resolved": "github:NixOS/nixpkgs/c80073788adf88abfdc443465311f00e7a231600?lastModified=1789813231"
+    },
+    "php@8.4": {
+      "last_modified": "2026-08-27T07:16:00Z",
+      "plugin_version": "0.0.3",
+      "resolved": "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410#php",
+      "source": "devbox-search",
+      "version": "8.4.24",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fkisg0cm8p551bps5iax5z674d1ndd39-php-with-extensions-8.4.24",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fkisg0cm8p551bps5iax5z674d1ndd39-php-with-extensions-8.4.24"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/maibmjnqxaj98sr5v0yrnjk7kb73d98n-php-with-extensions-8.4.24",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/maibmjnqxaj98sr5v0yrnjk7kb73d98n-php-with-extensions-8.4.24"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gx00fdhqb876m4yls65d3x6rrqimjfpl-php-with-extensions-8.4.24",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gx00fdhqb876m4yls65d3x6rrqimjfpl-php-with-extensions-8.4.24"
+        }
+      }
+    }
+  }
+}

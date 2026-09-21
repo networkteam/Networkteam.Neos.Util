@@ -1,16 +1,16 @@
 <?php
-namespace Networkteam\Neos\Util\FusionObjects;
 
 /***************************************************************
  *  (c) 2019 networkteam GmbH - all rights reserved
  ***************************************************************/
+
+namespace Networkteam\Neos\Util\FusionObjects;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class WithRequestImplementation extends AbstractFusionObject
 {
-
     public function evaluate()
     {
         $controllerContext = $this->runtime->getControllerContext();
@@ -19,11 +19,9 @@ class WithRequestImplementation extends AbstractFusionObject
         $withFormat = $this->fusionValue('format');
         $originalFormat = null;
 
-        if ($request instanceof \Neos\Flow\Mvc\ActionRequest) {
-            if (!empty($withFormat)) {
-                $originalFormat = $request->getFormat();
-                $request->setFormat($withFormat);
-            }
+        if ($request instanceof \Neos\Flow\Mvc\ActionRequest && !empty($withFormat)) {
+            $originalFormat = $request->getFormat();
+            $request->setFormat($withFormat);
         }
 
         try {
@@ -34,5 +32,4 @@ class WithRequestImplementation extends AbstractFusionObject
             }
         }
     }
-
 }
