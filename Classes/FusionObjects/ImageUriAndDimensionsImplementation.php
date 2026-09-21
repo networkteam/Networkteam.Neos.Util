@@ -65,7 +65,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
      */
     public function getAllowCropping(): bool
     {
-        return $this->fusionValue('allowCropping');
+        return (bool)$this->fusionValue('allowCropping');
     }
 
     /**
@@ -73,7 +73,7 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
      */
     public function getAllowUpScaling(): bool
     {
-        return $this->fusionValue('allowUpScaling');
+        return (bool)$this->fusionValue('allowUpScaling');
     }
 
     /**
@@ -95,6 +95,16 @@ class ImageUriAndDimensionsImplementation extends \Neos\Fusion\FusionObjects\Abs
         $maximumHeight = $this->getMaximumHeight();
         $allowCropping = $this->getAllowCropping();
         $allowUpScaling = $this->getAllowUpScaling();
+
+        // Neos\Media\Domain\Adjustment\ResizeImageAdjustment only applies cropping and
+        // upscaling when width/height are set, so fall back to the maximum values to
+        // keep those options working when no exact width/height was given.
+        if ($width === null) {
+            $width = $maximumWidth;
+        }
+        if ($height === null) {
+            $height = $maximumHeight;
+        }
 
         $thumbnailConfiguration = new \Neos\Media\Domain\Model\ThumbnailConfiguration($width, $maximumWidth, $height, $maximumHeight, $allowCropping, $allowUpScaling);
 
